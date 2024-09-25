@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "URL Blacklist Blocker",
+    "version": "1.0.1",
+    "description": "A powerful tool for families to block distracting or harmful websites and ensure a safe online environment for children.",
+    "permissions": [
+      "declarativeNetRequest",
+      "storage",
+      "tabs"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "options_page": "options.html",
+    "declarative_net_request": {
+      "rule_resources": [
+        {
+          "id": "ruleset_1",
+          "enabled": true,
+          "path": "rules.json"
+        }
+      ]
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["blocked.html", "blocked.js"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }

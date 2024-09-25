@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>Configure Blacklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 300px;
+      padding: 5px;
+    }
+    button {
+      padding: 5px 10px;
+      margin-left: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    li:hover{background-color: azure;}
+    #passwordPrompt {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  </style>
+</head>
+<body>
+  <div id="passwordPrompt">
+    <h1>Enter Password</h1>
+    <div><input type="password" id="passwordInput" placeholder="Enter password" />
+    <button type="button" id="submitPasswordButton">Submit</button></div>
+    <p id="error" style="color: red; display: none;">Incorrect password, try again.</p>
+  </div>
+  <div id="configContent" style="display: none;">
+    <h1>Configure Blacklist</h1>
+    <input type="text" id="urlInput" placeholder="Enter URL to block" />
+    <button type="button" id="addUrlButton">Add</button>
+    <ul id="blacklist"></ul>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
